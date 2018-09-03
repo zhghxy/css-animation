@@ -1,0 +1,43 @@
+.content{
+	margin: 0;
+	padding: 0;
+	position: relative;
+	height:350px;
+}
+.pic{
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-125px;
+	margin-top:-175px;
+	height:350px;
+	width:250px;
+   transform-style: preserve-3d;
+   
+}
+.down{
+	backface-visibility: hidden;
+	transform:rotateY(0deg);
+	transition:transform 1s;
+	position:absolute;
+	top:0;
+}
+.pic:after{
+	content:url(反面.jpg);
+	backface-visibility: hidden;
+	transform:rotateY(-180deg);
+	transition:transform 1s ;
+	position:absolute;
+	top:0;
+	
+}
+.pic:hover .down{
+	transform: rotateY(-180deg);
+	transition:transform 1s;
+	
+}
+.pic:hover:after{
+	transform:rotateY(0deg);
+	transition: transform 1s;
+	
+}
